@@ -11,7 +11,7 @@
         }
         
         else {
-            $convertir2 = $dolar * 0.88;
+            $convertir2 = $dolar * 0.89;
             echo "Resultat: ", $convertir2;
         }
     ?>

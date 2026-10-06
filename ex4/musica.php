@@ -5,18 +5,18 @@
     
     switch ($estil) {
         case "pop":
-        echo "Amo el pop";
+        echo "M'agrada el pop";
         break;
         case "rock":
-        echo "Amo el rock";
+        echo "M'encanta el rock";
         break;
         case "jazz":
-        echo "Amo el jazz";
+        echo "M'agrada el jazz";
         break;
         case "soul":
-        echo "Amo el soul";
+        echo "M'encanta el soul";
         break;
         default:
-        echo "No te gusta nada";
+        echo "No m'agrada cap dels llistats";
     }
 ?>

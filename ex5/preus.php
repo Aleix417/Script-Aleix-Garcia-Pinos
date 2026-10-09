@@ -1,7 +1,7 @@
 <?php
 
-    $IVA = $_GET["iva"];
-    $Preu = $_GET["preu"];
+    $IVA = $_POST["iva"];
+    $Preu = $_POST["preu"];
 
     switch ($IVA) {
         case "IVA1":

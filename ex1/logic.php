@@ -1,15 +1,13 @@
 <?php
-        $nom = $_GET["nombre"];
-        $cognoms = $_GET["cognom"];
-        $email = $_GET["email"];
-        $missatge = $_GET["missatge"];
+        $nom = $_POST["nombre"];
+        $cognoms = $_POST["cognom"];
+        $email = $_POST["email"];
+        $missatge = $_POST["missatge"];
 
-        echo "Missatge rebut, " .$nom. ". Gràcies per contactar. Et respondrem a " .$email. "";
+        echo "Missatge rebut, " .$nom. " " .$cognoms. ". Gràcies per contactar. Et respondrem a " .$email. ".";
     ?>
+      <form action='index.html' method='get'><button>Tornar</button></form>
 
-    Missatge rebut, <?php echo $nom ?> <?php echo $cognoms ?>.
-    Gracies per contactar. Et respondre a <?php echo $email ?>.
-    <form action='index.html' method='get'><button>Tornar</button></form>
 
 
     

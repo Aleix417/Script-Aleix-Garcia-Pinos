@@ -1,49 +1,50 @@
 <?php
 
-
-setcookie('majoredat', $_GET['edat']);
-echo $_COOKIE['majoredat'];
-
-setcookie('idioma', $_GET['idioma']);
-echo $_COOKIE['idioma'];
-
-setcookie('moneda', $_GET['moneda']);
-echo $_COOKIE['moneda'];
+if (isset($_GET['edat'])) {
+$edat = ($_GET['edat']);
+}
+setcookie('majoredat', $edat);
 
 
+if (isset($_GET['idioma'])) {
+$idioma = ($_GET['idioma']);
+}
+setcookie('idioma', $idioma);
+
+
+if (isset($_GET['moneda'])) {
+$moneda = ($_GET['moneda']);
+}
+setcookie('moneda', $moneda);
+
+
+if ($edat == "no") {
+    echo "<h1>No pots comprar, no ets major d'edat</h1>";
+}
+elseif ($edat == "si" && $idioma == "catala" && $moneda !== "€") {
+    echo "<h1>Benvingut</h1><br>
+    <p>T'oferim el Bacardi a 13 $moneda</p>";
+
+    echo "<p>T'oferim el Beefeater a 16 $moneda</p>";
+}
+elseif ($edat == "si" && $idioma == "espanyol" ) {
+    echo "<h1>Bienvenido</h1><br>
+    <p>Te ofrecemos el Bacardi a 13 $moneda</p>";
+
+    echo "<p>Te ofrecemos el Beefeater a 16 $moneda</p>";
+}
+elseif ($edat == "si" && $idioma == "angles" ) {
+    echo "<h1>Welcome</h1><br>
+    <p>We offer you Bacardi at 13 $moneda</p>";
+
+    echo "<p>We offer you Beefeater at 16 $moneda</p>";
+}
+elseif ($edat == "si" && $idioma == "catala" && $moneda == "€") {
+    echo "<h1>Benvingut</h1><br>
+    <p>T'oferim el Bacardi a 13 $moneda</p>";
+
+    echo"<p>T’oferim el vi “Les Terrasses” a un preu de 39 $moneda</p>";
+
+    echo "<p>T'oferim el Beefeater a 16 $moneda</p>";
+}
 ?>
-
-<html>
-    
-<head>
-
-</head>
-
-<body>
-
-
-    <form action="bodega.php" method="get">
-        Ets major d'edat?
-        <input type="radio" name="edat" value="si" >Si</input>
-        <input type="radio" name="edat" value="no">No</input>
-        <br>
-
-        En quin idioma vols veure la informació?
-        <input type="radio" name="idioma" value="catala">Català</input>
-        <input type="radio" name="idioma" value="espanyol">Espanyol</input>
-        <input type="radio" name="idioma" value="espanyol">Anglès</input>
-        <br>
-
-
-        Quin tipus de moneda fas servir?
-        <input type="radio" name="moneda" value="Euro">Euro</input>
-        <input type="radio" name="moneda" value="Dolar">Dolar</input>
-        <input type="radio" name="moneda" value="Lliures">Llures</input>
-        <br>
-
-        <input type="submit" value="Enviar">
-    </form>
-    
-</body>
-
-</html>
